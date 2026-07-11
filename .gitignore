@@ -1,0 +1,25 @@
+# archive
+_archive/
+
+# trained models
+models/
+
+# outputs
+outputs/
+results/
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# virtual env
+venv/
+.venv/
+
+# vscode
+.vscode/
+
+# system
+Thumbs.db
+.DS_Store

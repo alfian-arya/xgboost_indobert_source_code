@@ -1,0 +1,277 @@
+===============================================================================
+REFACTOR PROJECT SKRIPSI  —  mode: EKSEKUSI NYATA
+Waktu: 2026-06-21 15:17:56
+Root : C:\Users\Lenovo\Downloads\skrips_code\xgboost_indobert_method
+===============================================================================
+
+[1] MEMBUAT STRUKTUR FOLDER BARU
+  [BUAT] 01_scraping/
+  [BUAT] 02_cleaning/
+  [BUAT] 03_labelling/
+  [BUAT] 04_preprocessing/
+  [BUAT] 05_splitting/
+  [BUAT] 06_modelling/
+  [BUAT] 07_evaluation/
+  [BUAT] 08_app/
+  [BUAT] 09_visualization/
+  [BUAT] data/raw/
+  [BUAT] data/interim/
+  [BUAT] data/processed/
+  [BUAT] data/splits/
+  [BUAT] dictionaries/
+  [BUAT] models/ml/
+  [BUAT] models/indobert/
+  [BUAT] results/confusion_matrix/
+  [BUAT] results/cv/
+  [BUAT] results/spot_check/
+  [BUAT] outputs/figures/
+  [BUAT] outputs/docs/
+  [BUAT] docs/
+
+[2] MERAPIKAN KAMUS -> dictionaries/
+  [PINDAH] emoji_dict.csv  ->  dictionaries/emoji_dict.csv
+  [PINDAH] kbbi_dict.csv  ->  dictionaries/kbbi_dict.csv
+  [PINDAH] profanity_dict.csv  ->  dictionaries/profanity_dict.csv
+  [PINDAH] slang_dict.csv  ->  dictionaries/slang_dict.csv
+  [PINDAH] stopword_dict.csv  ->  dictionaries/stopword_dict.csv
+
+[3] MERAPIKAN DATA SCRAPING -> data/raw/ & 01_scraping/
+  [PINDAH] 01_data_scraping/scraping_ig.ipynb  ->  01_scraping/scraping_instagram.ipynb
+  [PINDAH] 01_data_scraping/scraping_tiktok.ipynb  ->  01_scraping/scraping_tiktok.ipynb
+  [PINDAH] 01_data_scraping/combined_all_data.csv  ->  data/raw/combined_all_data.csv
+  [PINDAH] 01_data_scraping/hasil_scraping  ->  data/raw/hasil_scraping
+  [ARSIP] 01_data_scraping   <- folder scraping lama (isi sudah dipindah)
+
+[4] MERAPIKAN CLEANING -> 02_cleaning/ & data/interim/
+  [PINDAH] 02_data_cleaning/Data_Cleaning_Pipeline.ipynb  ->  02_cleaning/Data_Cleaning_Pipeline.ipynb
+  [PINDAH] 02_data_cleaning/Data_Cleaning_Pipeline_Data_Labelling.ipynb  ->  02_cleaning/Data_Cleaning_Labelling.ipynb
+  [PINDAH] 02_data_cleaning/cleaned_data_v2.csv  ->  data/interim/cleaned_data_v2.csv
+  [ARSIP] 02_data_cleaning   <- folder cleaning lama (file final sudah dipindah)
+
+[5] MERAPIKAN LABELLING -> 03_labelling/ & data/
+  [PINDAH] 03_data_labelling/Persiapan_Data_Labeling.ipynb  ->  03_labelling/01_Persiapan_Labeling.ipynb
+  [PINDAH] 03_data_labelling/Labeling_Otomatis_IndoBERT.ipynb  ->  03_labelling/02_Labeling_Otomatis_IndoBERT.ipynb
+  [PINDAH] 03_data_labelling/Spot_Check_Noise.ipynb  ->  03_labelling/03_Spot_Check_Noise.ipynb
+  [PINDAH] 03_data_labelling/data_labeling.csv  ->  data/interim/data_labeling.csv
+  [PINDAH] 03_data_labelling/labelled_data_final.csv  ->  data/processed/labelled_data_final.csv
+  [PINDAH] 03_data_labelling/indobert_labeler  ->  models/indobert/indobert_labeler
+  [ARSIP] 03_data_labelling   <- folder labelling lama (file final sudah dipindah)
+
+[6] MERAPIKAN PREPROCESSING -> 04_preprocessing/ & data/processed/
+  [PINDAH] preprocessing_v2_final.ipynb  ->  04_preprocessing/Preprocessing_v2_Final.ipynb
+  [ARSIP] 04_data_preprocessing/00_Preprocessing_Terpusat.ipynb   <- preprocessing terpusat versi lama (4 Jun)
+  [PINDAH] prep_v2/data_preprocessed_v2.csv  ->  data/processed/data_preprocessed_v2.csv
+  [PINDAH] 04_data_preprocessing/data_preprocessed_xgboost.csv  ->  data/processed/preprocessed_xgboost.csv
+  [PINDAH] 04_data_preprocessing/data_preprocessed_indobert.csv  ->  data/processed/preprocessed_indobert.csv
+  [ARSIP] 04_data_preprocessing   <- folder preprocessing lama (final sudah dipindah)
+
+[7] MERAPIKAN SPLITTING -> data/splits/ (FINAL = splits_v2b)
+  [PINDAH] 00_Data_Splitter_Final.ipynb  ->  05_splitting/Data_Splitter_Final.ipynb
+  [PINDAH] preprocessing_v2_80_20_gabungan_1.ipynb  ->  05_splitting/Splitting_dan_Eksperimen_Final.ipynb
+  [PINDAH] splits_v2b/v2b_manual_train.csv  ->  data/splits/v2b_manual_train.csv
+  [PINDAH] splits_v2b/v2b_manual_test.csv  ->  data/splits/v2b_manual_test.csv
+  [PINDAH] splits_v2b/v2b_agab_train.csv  ->  data/splits/v2b_agab_train.csv
+  [PINDAH] splits_v2b/v2b_agab_test.csv  ->  data/splits/v2b_agab_test.csv
+  [PINDAH] splits_v2b/v2b_bgab_train.csv  ->  data/splits/v2b_bgab_train.csv
+  [PINDAH] splits_v2b/v2b_bgab_test.csv  ->  data/splits/v2b_bgab_test.csv
+  [ARSIP] splits_v2b   <- folder splits (isi final sudah dipindah)
+  [ARSIP] splits   <- splits versi lama v1
+  [ARSIP] splits_v2   <- splits versi antara (bukan final)
+
+[8] MERAPIKAN NOTEBOOK MODELLING -> 06_modelling/
+  [PINDAH] 01_LR_A_Manual.ipynb  ->  06_modelling/01_LR_A_Manual.ipynb
+  [PINDAH] 01_LR_A_Gabungan.ipynb  ->  06_modelling/01_LR_A_Gabungan.ipynb
+  [PINDAH] 01_LR_B_Gabungan.ipynb  ->  06_modelling/01_LR_B_Gabungan.ipynb
+  [PINDAH] 02_XGB_NoTune_A_Manual.ipynb  ->  06_modelling/02_XGB_NoTune_A_Manual.ipynb
+  [PINDAH] 02_XGB_NoTune_A_Gabungan.ipynb  ->  06_modelling/02_XGB_NoTune_A_Gabungan.ipynb
+  [PINDAH] 02_XGB_NoTune_B_Gabungan.ipynb  ->  06_modelling/02_XGB_NoTune_B_Gabungan.ipynb
+  [PINDAH] 03_XGB_Tuned_A_Manual.ipynb  ->  06_modelling/03_XGB_Tuned_A_Manual.ipynb
+  [PINDAH] 03_XGB_Tuned_A_Gabungan.ipynb  ->  06_modelling/03_XGB_Tuned_A_Gabungan.ipynb
+  [PINDAH] 03_XGB_Tuned_B_Gabungan.ipynb  ->  06_modelling/03_XGB_Tuned_B_Gabungan.ipynb
+  [PINDAH] 04_IndoBERT_A_Manual.ipynb  ->  06_modelling/04_IndoBERT_A_Manual.ipynb
+  [PINDAH] 04_IndoBERT_A_Gabungan.ipynb  ->  06_modelling/04_IndoBERT_A_Gabungan.ipynb
+  [PINDAH] 04_IndoBERT_B_Gabungan.ipynb  ->  06_modelling/04_IndoBERT_B_Gabungan.ipynb
+
+[9] MERAPIKAN EVALUASI -> 07_evaluation/
+  [PINDAH] 05_Rekapitulasi.ipynb  ->  07_evaluation/Rekapitulasi.ipynb
+
+[10] MERAPIKAN MODEL -> models/ml/ (FINAL = _v2_) ; arsipkan v1
+  [PINDAH] models/XGB_v2_Tuned_A_Manual.pkl  ->  models/ml/XGB_v2_Tuned_A_Manual.pkl
+  [PINDAH] models/XGB_v2_Tuned_A_Gabungan.pkl  ->  models/ml/XGB_v2_Tuned_A_Gabungan.pkl
+  [PINDAH] models/XGB_v2_Tuned_B_Gabungan.pkl  ->  models/ml/XGB_v2_Tuned_B_Gabungan.pkl
+  [PINDAH] models/XGB_v2_NoTune_A_Manual.pkl  ->  models/ml/XGB_v2_NoTune_A_Manual.pkl
+  [PINDAH] models/XGB_v2_NoTune_A_Gabungan.pkl  ->  models/ml/XGB_v2_NoTune_A_Gabungan.pkl
+  [PINDAH] models/XGB_v2_NoTune_B_Gabungan.pkl  ->  models/ml/XGB_v2_NoTune_B_Gabungan.pkl
+  [PINDAH] models/LR_v2_A_Manual.pkl  ->  models/ml/LR_v2_A_Manual.pkl
+  [PINDAH] models/LR_v2_A_Gabungan.pkl  ->  models/ml/LR_v2_A_Gabungan.pkl
+  [PINDAH] models/LR_v2_B_Gabungan.pkl  ->  models/ml/LR_v2_B_Gabungan.pkl
+  [PINDAH] models/vec_XGB_v2_Tuned_A_Manual.pkl  ->  models/ml/vec_XGB_v2_Tuned_A_Manual.pkl
+  [PINDAH] models/vec_XGB_v2_Tuned_A_Gabungan.pkl  ->  models/ml/vec_XGB_v2_Tuned_A_Gabungan.pkl
+  [PINDAH] models/vec_XGB_v2_Tuned_B_Gabungan.pkl  ->  models/ml/vec_XGB_v2_Tuned_B_Gabungan.pkl
+  [PINDAH] models/vec_XGB_v2_NoTune_A_Manual.pkl  ->  models/ml/vec_XGB_v2_NoTune_A_Manual.pkl
+  [PINDAH] models/vec_XGB_v2_NoTune_A_Gabungan.pkl  ->  models/ml/vec_XGB_v2_NoTune_A_Gabungan.pkl
+  [PINDAH] models/vec_XGB_v2_NoTune_B_Gabungan.pkl  ->  models/ml/vec_XGB_v2_NoTune_B_Gabungan.pkl
+  [PINDAH] models/vec_LR_v2_A_Manual.pkl  ->  models/ml/vec_LR_v2_A_Manual.pkl
+  [PINDAH] models/vec_LR_v2_A_Gabungan.pkl  ->  models/ml/vec_LR_v2_A_Gabungan.pkl
+  [PINDAH] models/vec_LR_v2_B_Gabungan.pkl  ->  models/ml/vec_LR_v2_B_Gabungan.pkl
+  [PINDAH] models/indobert_A_Manual  ->  models/indobert/indobert_A_Manual
+  [PINDAH] models/indobert_A_Gabungan  ->  models/indobert/indobert_A_Gabungan
+  [PINDAH] models/indobert_B_Gabungan  ->  models/indobert/indobert_B_Gabungan
+
+   -> Mengarsipkan model versi lama (non-v2) ...
+  [ARSIP] models/LR_A_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/LR_A_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/LR_B_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/LR_v2_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/LR_v2_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/XGB_NoTune_A_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/XGB_NoTune_A_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/XGB_NoTune_B_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/XGB_Tuned_A_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/XGB_Tuned_A_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/XGB_Tuned_B_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/XGB_v2_NoTune_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/XGB_v2_NoTune_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/XGB_v2_Tuned_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_LR_A_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_LR_A_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_LR_B_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_LR_v2_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_LR_v2_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_XGB_NoTune_A_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_XGB_NoTune_A_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_XGB_NoTune_B_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_XGB_Tuned_A_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_XGB_Tuned_A_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_XGB_Tuned_B_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_XGB_v2_NoTune_Gabungan.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_XGB_v2_NoTune_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] models/vec_XGB_v2_Tuned_Manual.pkl   <- model versi lama (non-v2)
+  [ARSIP] indobert_A_Manual   <- folder indobert duplikat di root
+  [ARSIP] indobert_A_Gabungan   <- folder indobert duplikat di root
+  [ARSIP] indobert_B_Gabungan   <- folder indobert duplikat di root
+  [ARSIP] indobert_labeler   <- folder indobert duplikat di root
+
+[11] MERAPIKAN RESULTS -> results/ (FINAL = confusion_matrix_v2)
+  [PINDAH] results/confusion_matrix_v2/CM_LR_v2_A_Gabungan.png  ->  results/confusion_matrix/CM_LR_v2_A_Gabungan.png
+  [PINDAH] results/confusion_matrix_v2/CM_LR_v2_A_Manual.png  ->  results/confusion_matrix/CM_LR_v2_A_Manual.png
+  [PINDAH] results/confusion_matrix_v2/CM_LR_v2_B_Gabungan.png  ->  results/confusion_matrix/CM_LR_v2_B_Gabungan.png
+  [PINDAH] results/confusion_matrix_v2/CM_XGB_v2_NoTune_A_Gabungan.png  ->  results/confusion_matrix/CM_XGB_v2_NoTune_A_Gabungan.png
+  [PINDAH] results/confusion_matrix_v2/CM_XGB_v2_NoTune_A_Manual.png  ->  results/confusion_matrix/CM_XGB_v2_NoTune_A_Manual.png
+  [PINDAH] results/confusion_matrix_v2/CM_XGB_v2_NoTune_B_Gabungan.png  ->  results/confusion_matrix/CM_XGB_v2_NoTune_B_Gabungan.png
+  [PINDAH] results/confusion_matrix_v2/CM_XGB_v2_Tuned_A_Gabungan.png  ->  results/confusion_matrix/CM_XGB_v2_Tuned_A_Gabungan.png
+  [PINDAH] results/confusion_matrix_v2/CM_XGB_v2_Tuned_A_Manual.png  ->  results/confusion_matrix/CM_XGB_v2_Tuned_A_Manual.png
+  [PINDAH] results/confusion_matrix_v2/CM_XGB_v2_Tuned_B_Gabungan.png  ->  results/confusion_matrix/CM_XGB_v2_Tuned_B_Gabungan.png
+  [ARSIP] results/confusion_matrix_v2   <- folder CM v2 (isi sudah dipindah)
+  [PINDAH] results/cv_XGB_v2_Tuned_A_Gabungan.csv  ->  results/cv/cv_XGB_v2_Tuned_A_Gabungan.csv
+  [PINDAH] results/cv_XGB_v2_Tuned_A_Manual.csv  ->  results/cv/cv_XGB_v2_Tuned_A_Manual.csv
+  [PINDAH] results/cv_XGB_v2_Tuned_B_Gabungan.csv  ->  results/cv/cv_XGB_v2_Tuned_B_Gabungan.csv
+  [PINDAH] results/tabel_spot_check.csv  ->  results/spot_check/tabel_spot_check.csv
+  [PINDAH] results/spot_check_hasil.png  ->  results/spot_check/spot_check_hasil.png
+  [PINDAH] results/kalimat_spot_check_bab3.txt  ->  results/spot_check/kalimat_spot_check_bab3.txt
+  [PINDAH] spot_check/distribusi_per_band.png  ->  results/spot_check/distribusi_per_band.png
+  [PINDAH] spot_check/spot_check_band_rendah.csv  ->  results/spot_check/spot_check_band_rendah.csv
+  [PINDAH] spot_check/spot_check_band_sedang.csv  ->  results/spot_check/spot_check_band_sedang.csv
+  [PINDAH] spot_check/spot_check_band_tinggi.csv  ->  results/spot_check/spot_check_band_tinggi.csv
+  [ARSIP] spot_check   <- folder spot_check lama (isi sudah dipindah)
+
+   -> Mengarsipkan confusion matrix versi lama (v1) ...
+  [ARSIP] results/CM_IndoBERT_A_Gabungan.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_IndoBERT_A_Manual.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_IndoBERT_B_Gabungan.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_LR_A_Gabungan.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_LR_A_Manual.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_LR_B_Gabungan.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_XGB-Tuned-A-Gabungan.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_XGB-Tuned-A-Manual.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_XGB_NoTune_A_Gabungan.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_XGB_NoTune_A_Manual.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_XGB_NoTune_B_Gabungan.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_XGB_Tuned_A_Gabungan.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_XGB_Tuned_A_Manual.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/CM_XGB_Tuned_B_Gabungan.png   <- confusion matrix v1 (lama)
+  [ARSIP] results/cv_A_Gabungan.csv   <- cv lama (non-v2)
+  [ARSIP] results/cv_A_Manual.csv   <- cv lama (non-v2)
+  [ARSIP] results/cv_B_Gabungan.csv   <- cv lama (non-v2)
+  [ARSIP] results/cv_XGB_v2_Tuned_Manual.csv   <- cv lama (non-v2)
+  [ARSIP] results/cv_results.csv   <- cv lama (non-v2)
+  [ARSIP] results/cv_results_E07.csv   <- cv lama (non-v2)
+  [ARSIP] results/cv_results_XGB_Tuned_A_Gabungan.csv   <- cv lama (non-v2)
+  [PINDAH] results/hist_IndoBERT_A_Gabungan.png  ->  results/hist_IndoBERT_A_Gabungan.png
+  [PINDAH] results/hist_IndoBERT_A_Manual.png  ->  results/hist_IndoBERT_A_Manual.png
+  [PINDAH] results/hist_IndoBERT_B_Gabungan.png  ->  results/hist_IndoBERT_B_Gabungan.png
+
+[12] MERAPIKAN APLIKASI -> 08_app/ (FINAL = sentiment_app_v2_1.py)
+  [PINDAH] sentiment_app_v2_1.py  ->  08_app/sentiment_app.py
+  [ARSIP] sentiment_app.py   <- app versi 1 (lama)
+  [ARSIP] sentiment_app_fix.py   <- app versi fix (lama)
+  [ARSIP] sentiment_app_v2.py   <- app v2 (digantikan v2_1)
+
+[13] MERAPIKAN VISUALISASI -> 09_visualization/ & outputs/figures/
+  [PINDAH] Visualisasi_Skripsi.ipynb  ->  09_visualization/Visualisasi_Skripsi.ipynb
+  [PINDAH] Bab2_Diagram_Alur.ipynb  ->  09_visualization/Bab2_Diagram_Alur.ipynb
+  [PINDAH] Bab3_Visualisasi_Data_Aktual.ipynb  ->  09_visualization/Bab3_Visualisasi_Data_Aktual.ipynb
+  [PINDAH] diagram_alur_skripsi.ipynb  ->  09_visualization/diagram_alur_skripsi.ipynb
+  [PINDAH] output_bab2/Gambar1_Tahapan_Penelitian.png  ->  outputs/figures/Gambar1_Tahapan_Penelitian.png
+  [PINDAH] output_bab2/Gambar2_Rancangan_Sistem.png  ->  outputs/figures/Gambar2_Rancangan_Sistem.png
+  [PINDAH] output_bab2/Gambar3_Pipeline_Preprocessing.png  ->  outputs/figures/Gambar3_Pipeline_Preprocessing.png
+  [PINDAH] output_bab2/Gambar4_Arsitektur_MLR.png  ->  outputs/figures/Gambar4_Arsitektur_MLR.png
+  [PINDAH] output_bab2/Gambar5_Alur_Klasifikasi_LR.png  ->  outputs/figures/Gambar5_Alur_Klasifikasi_LR.png
+  [PINDAH] output_bab2/Gambar6_Arsitektur_XGBoost.png  ->  outputs/figures/Gambar6_Arsitektur_XGBoost.png
+  [PINDAH] output_bab2/Gambar7_Alur_Klasifikasi_XGBoost.png  ->  outputs/figures/Gambar7_Alur_Klasifikasi_XGBoost.png
+  [PINDAH] output_bab2/Gambar8_Arsitektur_IndoBERT.png  ->  outputs/figures/Gambar8_Arsitektur_IndoBERT.png
+  [PINDAH] output_bab2/Gambar9_Alur_Klasifikasi_IndoBERT.png  ->  outputs/figures/Gambar9_Alur_Klasifikasi_IndoBERT.png
+  [ARSIP] output_bab2   <- folder gambar bab2 (isi sudah dipindah)
+  [PINDAH] output_visualisasi/dist_confidence_band.png  ->  outputs/figures/dist_confidence_band.png
+  [PINDAH] output_visualisasi/dist_kelas_labeling.png  ->  outputs/figures/dist_kelas_labeling.png
+  [PINDAH] output_visualisasi/dist_kelas_per_layanan.png  ->  outputs/figures/dist_kelas_per_layanan.png
+  [PINDAH] output_visualisasi/dist_panjang_komentar.png  ->  outputs/figures/dist_panjang_komentar.png
+  [PINDAH] output_visualisasi/dist_train_test.png  ->  outputs/figures/dist_train_test.png
+  [PINDAH] output_visualisasi/wordcloud_per_kelas.png  ->  outputs/figures/wordcloud_per_kelas.png
+  [ARSIP] output_visualisasi   <- folder visualisasi (isi sudah dipindah)
+  [ARSIP] output_gambar   <- duplikat output_bab2
+
+[14] MENGARSIPKAN NOTEBOOK & FILE EKSPERIMEN LAMA DI ROOT
+  [ARSIP] 00_A1_join_csv.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] 00_A_Data_Preprocessing.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] join_csv.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] 00_Data_Splitter.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] 00_Data_Splitter_Fixed.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] preprocessing_v2_80_20_gabungan.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] preprocessing_v2_notebook.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] preprocessing_v2_xgboost.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] Preprocessing_IndoBERT.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] indobert_tuning.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] Spot_Check_Band_Confidence.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] Spot_Check_Final.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] d121191078_skripsi_code_xgboost.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] d121191078_skripsi_code_xgboost copy.ipynb   <- file/notebook eksperimen lama
+  [ARSIP] data_preprocessing_2.0.csv   <- file/notebook eksperimen lama
+  [ARSIP] data_preprocessing_3.0.csv   <- file/notebook eksperimen lama
+  [ARSIP] data_preprocessing_4.0.csv   <- file/notebook eksperimen lama
+  [ARSIP] data_preprocessed_indobert.csv   <- file/notebook eksperimen lama
+  [ARSIP] data_preprocessed_indobert_2.0.csv   <- file/notebook eksperimen lama
+  [ARSIP] cleaned_data.csv   <- file/notebook eksperimen lama
+  [ARSIP] cleaned_data_baru.csv   <- file/notebook eksperimen lama
+  [ARSIP] labelled_data_baru.csv   <- file/notebook eksperimen lama
+  [ARSIP] labelled_data_filtered.csv   <- file/notebook eksperimen lama
+  [ARSIP] labelled_data_final.csv   <- file/notebook eksperimen lama
+  [ARSIP] data_labeling.csv   <- file/notebook eksperimen lama
+  [ARSIP] spot_check_200.csv   <- file/notebook eksperimen lama
+  [ARSIP] analisis_confidence_otomatis.png   <- file/notebook eksperimen lama
+  [ARSIP] analisis_preprocessing.png   <- file/notebook eksperimen lama
+  [ARSIP] feature_importance_xgboost_3.0.png   <- file/notebook eksperimen lama
+  [ARSIP] feature_importance_xgboost_4.0.png   <- file/notebook eksperimen lama
+  [ARSIP] cc.id.300.bin   <- file/notebook eksperimen lama
+  [ARSIP] cc.id.300.bin.gz   <- file/notebook eksperimen lama
+  [ARSIP] instagram_session.json   <- file/notebook eksperimen lama
+  [ARSIP] struktur_project.txt   <- file/notebook eksperimen lama
+  [ARSIP] 04_data_modelling   <- folder modelling eksperimen lama
+  [ARSIP] prep_v2   <- folder prep_v2 (csv final sudah dipindah)
+
+[15] PEMBERSIHAN AKHIR
+
+===============================================================================
+RENCANA REFACTOR SELESAI DISUSUN.
+>> SELESAI DIEKSEKUSI. File lama ada di folder _archive/
+===============================================================================

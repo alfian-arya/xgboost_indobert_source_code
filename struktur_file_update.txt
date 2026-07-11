@@ -1,0 +1,412 @@
+Folder PATH listing for volume Windows-SSD
+Volume serial number is 000000E6 1602:4F73
+C:.
+|   refactor_log.txt
+|   refactor_project.py
+|   struktur_file_update.txt
+|   struktur_file_updatetxt
+|   struktur_file_update_2.txt
+|   struktur_project_update.txt
+|   
++---01_scraping
+|       scraping_instagram.ipynb
+|       scraping_tiktok.ipynb
+|       
++---02_cleaning
+|       Data_Cleaning_Labelling.ipynb
+|       Data_Cleaning_Pipeline.ipynb
+|       
++---03_labelling
+|       01_Persiapan_Labeling.ipynb
+|       02_Labeling_Otomatis_IndoBERT.ipynb
+|       03_Spot_Check_Noise.ipynb
+|       
++---04_preprocessing
+|       Preprocessing_v2_Final.ipynb
+|       
++---05_splitting
+|       Data_Splitter_Final.ipynb
+|       Splitting_dan_Eksperimen_Final.ipynb
+|       
++---06_modelling
+|       01_LR_A_Gabungan.ipynb
+|       01_LR_A_Manual.ipynb
+|       01_LR_B_Gabungan.ipynb
+|       02_XGB_NoTune_A_Gabungan.ipynb
+|       02_XGB_NoTune_A_Manual.ipynb
+|       02_XGB_NoTune_B_Gabungan.ipynb
+|       03_XGB_Tuned_A_Gabungan.ipynb
+|       03_XGB_Tuned_A_Manual.ipynb
+|       03_XGB_Tuned_B_Gabungan.ipynb
+|       04_IndoBERT_A_Gabungan.ipynb
+|       04_IndoBERT_A_Manual.ipynb
+|       04_IndoBERT_B_Gabungan.ipynb
+|       
++---07_evaluation
+|       Rekapitulasi.ipynb
+|       
++---08_app
+|       sentiment_app.py
+|       
++---09_visualization
+|       Bab2_Diagram_Alur.ipynb
+|       Bab3_Visualisasi_Data_Aktual.ipynb
+|       diagram_alur_skripsi.ipynb
+|       Visualisasi_Skripsi.ipynb
+|       
++---data
+|   +---interim
+|   |       cleaned_data_v2.csv
+|   |       data_labeling.csv
+|   |       
+|   +---processed
+|   |       data_preprocessed_v2.csv
+|   |       labelled_data_filtered.csv
+|   |       preprocessed_indobert.csv
+|   |       preprocessed_xgboost.csv
+|   |       
+|   +---raw
+|   |   |   combined_all_data.csv
+|   |   |   
+|   |   \---hasil_scraping
+|   |       |   combined_all_data.csv
+|   |       |   
+|   |       +---instagram
+|   |       |       dataset_instagram_20260525_132650.csv
+|   |       |       dataset_instagram_20260525_134657.csv
+|   |       |       dataset_instagram_20260525_135332.csv
+|   |       |       dataset_instagram_20260525_140226.csv
+|   |       |       dataset_instagram_20260525_140900.csv
+|   |       |       dataset_instagram_20260525_141735.csv
+|   |       |       dataset_instagram_20260525_142425.csv
+|   |       |       dataset_instagram_20260525_143730.csv
+|   |       |       dataset_instagram_20260525_144451.csv
+|   |       |       dataset_instagram_20260525_144942.csv
+|   |       |       dataset_instagram_20260525_150052.csv
+|   |       |       dataset_instagram_20260525_150259.csv
+|   |       |       
+|   |       \---tiktok
+|   |               dataset_tiktok_20260525_162117.csv
+|   |               dataset_tiktok_20260525_163447.csv
+|   |               dataset_tiktok_20260525_164140.csv
+|   |               dataset_tiktok_20260525_165715.csv
+|   |               dataset_tiktok_20260525_171128.csv
+|   |               dataset_tiktok_20260525_172202.csv
+|   |               dataset_tiktok_20260525_173300.csv
+|   |               dataset_tiktok_20260525_173822.csv
+|   |               dataset_tiktok_20260525_175314.csv
+|   |               dataset_tiktok_20260525_181006.csv
+|   |               dataset_tiktok_20260525_182805.csv
+|   |               dataset_tiktok_20260525_183827.csv
+|   |               dataset_tiktok_20260525_184348.csv
+|   |               dataset_tiktok_20260525_192510.csv
+|   |               dataset_tiktok_20260525_193418.csv
+|   |               dataset_tiktok_20260525_194223.csv
+|   |               dataset_tiktok_20260525_195849.csv
+|   |               dataset_tiktok_20260525_201049.csv
+|   |               
+|   \---splits
+|           v2b_agab_test.csv
+|           v2b_agab_train.csv
+|           v2b_bgab_test.csv
+|           v2b_bgab_train.csv
+|           v2b_manual_test.csv
+|           v2b_manual_train.csv
+|           
++---dictionaries
+|       emoji_dict.csv
+|       kbbi_dict.csv
+|       profanity_dict.csv
+|       slang_dict.csv
+|       stopword_dict.csv
+|       
++---docs
++---models
+|   +---indobert
+|   |   +---indobert_A_Gabungan
+|   |   |       config.json
+|   |   |       model.safetensors
+|   |   |       tokenizer.json
+|   |   |       tokenizer_config.json
+|   |   |       
+|   |   +---indobert_A_Manual
+|   |   |       config.json
+|   |   |       model.safetensors
+|   |   |       tokenizer.json
+|   |   |       tokenizer_config.json
+|   |   |       
+|   |   +---indobert_B_Gabungan
+|   |   |       config.json
+|   |   |       model.safetensors
+|   |   |       tokenizer.json
+|   |   |       tokenizer_config.json
+|   |   |       
+|   |   \---indobert_labeler
+|   |           config.json
+|   |           model.safetensors
+|   |           tokenizer.json
+|   |           tokenizer_config.json
+|   |           
+|   \---ml
+|           LR_v2_A_Gabungan.pkl
+|           LR_v2_A_Manual.pkl
+|           LR_v2_B_Gabungan.pkl
+|           vec_LR_v2_A_Gabungan.pkl
+|           vec_LR_v2_A_Manual.pkl
+|           vec_LR_v2_B_Gabungan.pkl
+|           vec_XGB_v2_NoTune_A_Gabungan.pkl
+|           vec_XGB_v2_NoTune_A_Manual.pkl
+|           vec_XGB_v2_NoTune_B_Gabungan.pkl
+|           vec_XGB_v2_Tuned_A_Gabungan.pkl
+|           vec_XGB_v2_Tuned_A_Manual.pkl
+|           vec_XGB_v2_Tuned_B_Gabungan.pkl
+|           XGB_v2_NoTune_A_Gabungan.pkl
+|           XGB_v2_NoTune_A_Manual.pkl
+|           XGB_v2_NoTune_B_Gabungan.pkl
+|           XGB_v2_Tuned_A_Gabungan.pkl
+|           XGB_v2_Tuned_A_Manual.pkl
+|           XGB_v2_Tuned_B_Gabungan.pkl
+|           
++---outputs
+|   +---docs
+|   \---figures
+|           dist_confidence_band.png
+|           dist_kelas_labeling.png
+|           dist_kelas_per_layanan.png
+|           dist_panjang_komentar.png
+|           dist_train_test.png
+|           Gambar1_Tahapan_Penelitian.png
+|           Gambar2_Rancangan_Sistem.png
+|           Gambar3_Pipeline_Preprocessing.png
+|           Gambar4_Arsitektur_MLR.png
+|           Gambar5_Alur_Klasifikasi_LR.png
+|           Gambar6_Arsitektur_XGBoost.png
+|           Gambar7_Alur_Klasifikasi_XGBoost.png
+|           Gambar8_Arsitektur_IndoBERT.png
+|           Gambar9_Alur_Klasifikasi_IndoBERT.png
+|           wordcloud_per_kelas.png
+|           
++---results
+|   |   hist_IndoBERT_A_Gabungan.png
+|   |   hist_IndoBERT_A_Manual.png
+|   |   hist_IndoBERT_B_Gabungan.png
+|   |   
+|   +---confusion_matrix
+|   |       CM_LR_v2_A_Gabungan.png
+|   |       CM_LR_v2_A_Manual.png
+|   |       CM_LR_v2_B_Gabungan.png
+|   |       CM_XGB_v2_NoTune_A_Gabungan.png
+|   |       CM_XGB_v2_NoTune_A_Manual.png
+|   |       CM_XGB_v2_NoTune_B_Gabungan.png
+|   |       CM_XGB_v2_Tuned_A_Gabungan.png
+|   |       CM_XGB_v2_Tuned_A_Manual.png
+|   |       CM_XGB_v2_Tuned_B_Gabungan.png
+|   |       
+|   +---cv
+|   |       cv_XGB_v2_Tuned_A_Gabungan.csv
+|   |       cv_XGB_v2_Tuned_A_Manual.csv
+|   |       cv_XGB_v2_Tuned_B_Gabungan.csv
+|   |       
+|   \---spot_check
+|           distribusi_per_band.png
+|           kalimat_spot_check_bab3.txt
+|           spot_check_band_rendah.csv
+|           spot_check_band_sedang.csv
+|           spot_check_band_tinggi.csv
+|           spot_check_hasil.png
+|           tabel_spot_check.csv
+|           
+\---_archive
+    |   00_A1_join_csv.ipynb
+    |   00_A_Data_Preprocessing.ipynb
+    |   00_Data_Splitter.ipynb
+    |   00_Data_Splitter_Fixed.ipynb
+    |   analisis_confidence_otomatis.png
+    |   analisis_preprocessing.png
+    |   cleaned_data.csv
+    |   cleaned_data_baru.csv
+    |   d121191078_skripsi_code_xgboost copy.ipynb
+    |   d121191078_skripsi_code_xgboost.ipynb
+    |   data_labeling.csv
+    |   data_preprocessed_indobert.csv
+    |   data_preprocessed_indobert_2.0.csv
+    |   data_preprocessing_2.0.csv
+    |   data_preprocessing_3.0.csv
+    |   data_preprocessing_4.0.csv
+    |   feature_importance_xgboost_3.0.png
+    |   feature_importance_xgboost_4.0.png
+    |   indobert_tuning.ipynb
+    |   instagram_session.json
+    |   join_csv.ipynb
+    |   labelled_data_baru.csv
+    |   labelled_data_final.csv
+    |   Preprocessing_IndoBERT.ipynb
+    |   preprocessing_v2_80_20_gabungan.ipynb
+    |   preprocessing_v2_notebook.ipynb
+    |   preprocessing_v2_xgboost.ipynb
+    |   sentiment_app.py
+    |   sentiment_app_fix.py
+    |   sentiment_app_v2.py
+    |   spot_check_200.csv
+    |   Spot_Check_Band_Confidence.ipynb
+    |   Spot_Check_Final.ipynb
+    |   struktur_project.txt
+    |   
+    +---01_data_scraping
+    +---02_data_cleaning
+    |       analisis_sebelum_cleaning.png
+    |       data_cleaned.csv
+    |       data_labeling.csv
+    |       data_labeling_cleaned.csv
+    |       perbandingan_cleaning.png
+    |       perbandingan_cleaning_labelled.png
+    |       
+    +---03_data_labelling
+    |   |   cleaned_data_baru.csv
+    |   |   data_for_auto_labeling.csv
+    |   |   data_labeling_cleaned.csv
+    |   |   join_csv.ipynb
+    |   |   labelled_data_final.csv
+    |   |   spot_check_200.csv
+    |   |   spot_check_confidence0.7.csv
+    |   |   training_history_pelabel.png
+    |   |   
+    |   \---data_cleaning
+    |           data_cleaned.csv
+    |           
+    +---04_data_modelling
+    |       Modelling_XGBoost.ipynb
+    |       test-gpu.ipynb
+    |       
+    +---04_data_preprocessing
+    |   |   00_Preprocessing_Terpusat.ipynb
+    |   |   
+    |   \---04_data_preprocessing
+    |           Preprocessing_Pipeline.ipynb
+    |           Preprocessing_Seprianto.ipynb
+    |           prep_auto_idb.csv
+    |           prep_auto_xgb.csv
+    |           prep_manual_idb.csv
+    |           prep_manual_xgb.csv
+    |           
+    +---indobert_A_Gabungan
+    |       config.json
+    |       model.safetensors
+    |       tokenizer.json
+    |       tokenizer_config.json
+    |       
+    +---indobert_A_Manual
+    |       config.json
+    |       model.safetensors
+    |       tokenizer.json
+    |       tokenizer_config.json
+    |       
+    +---indobert_B_Gabungan
+    |       config.json
+    |       model.safetensors
+    |       tokenizer.json
+    |       tokenizer_config.json
+    |       
+    +---indobert_labeler
+    |       config.json
+    |       model.safetensors
+    |       tokenizer.json
+    |       tokenizer_config.json
+    |       
+    +---models
+    |       LR_A_Gabungan.pkl
+    |       LR_A_Manual.pkl
+    |       LR_B_Gabungan.pkl
+    |       LR_v2_Gabungan.pkl
+    |       LR_v2_Manual.pkl
+    |       vec_LR_A_Gabungan.pkl
+    |       vec_LR_A_Manual.pkl
+    |       vec_LR_B_Gabungan.pkl
+    |       vec_LR_v2_Gabungan.pkl
+    |       vec_LR_v2_Manual.pkl
+    |       vec_XGB_NoTune_A_Gabungan.pkl
+    |       vec_XGB_NoTune_A_Manual.pkl
+    |       vec_XGB_NoTune_B_Gabungan.pkl
+    |       vec_XGB_Tuned_A_Gabungan.pkl
+    |       vec_XGB_Tuned_A_Manual.pkl
+    |       vec_XGB_Tuned_B_Gabungan.pkl
+    |       vec_XGB_v2_NoTune_Gabungan.pkl
+    |       vec_XGB_v2_NoTune_Manual.pkl
+    |       vec_XGB_v2_Tuned_Manual.pkl
+    |       XGB_NoTune_A_Gabungan.pkl
+    |       XGB_NoTune_A_Manual.pkl
+    |       XGB_NoTune_B_Gabungan.pkl
+    |       XGB_Tuned_A_Gabungan.pkl
+    |       XGB_Tuned_A_Manual.pkl
+    |       XGB_Tuned_B_Gabungan.pkl
+    |       XGB_v2_NoTune_Gabungan.pkl
+    |       XGB_v2_NoTune_Manual.pkl
+    |       XGB_v2_Tuned_Manual.pkl
+    |       
+    +---output_bab2
+    +---output_gambar
+    |       Gambar01_tahapan_penelitian.png
+    |       Gambar02_rancangan_sistem.png
+    |       Gambar03_pipeline_preprocessing.png
+    |       Gambar04_arsitektur_MLR.png
+    |       Gambar05_alur_klasifikasi_LR.png
+    |       Gambar06_arsitektur_XGBoost.png
+    |       Gambar07_alur_klasifikasi_XGBoost.png
+    |       Gambar08_arsitektur_IndoBERT.png
+    |       Gambar09_alur_klasifikasi_IndoBERT.png
+    |       
+    +---output_visualisasi
+    +---prep_v2
+    |       v2_gabungan_test.csv
+    |       v2_gabungan_train.csv
+    |       v2_manual_test.csv
+    |       v2_manual_train.csv
+    |       
+    +---results
+    |   |   CM_IndoBERT_A_Gabungan.png
+    |   |   CM_IndoBERT_A_Manual.png
+    |   |   CM_IndoBERT_B_Gabungan.png
+    |   |   CM_LR_A_Gabungan.png
+    |   |   CM_LR_A_Manual.png
+    |   |   CM_LR_B_Gabungan.png
+    |   |   CM_XGB-Tuned-A-Gabungan.png
+    |   |   CM_XGB-Tuned-A-Manual.png
+    |   |   CM_XGB_NoTune_A_Gabungan.png
+    |   |   CM_XGB_NoTune_A_Manual.png
+    |   |   CM_XGB_NoTune_B_Gabungan.png
+    |   |   CM_XGB_Tuned_A_Gabungan.png
+    |   |   CM_XGB_Tuned_A_Manual.png
+    |   |   CM_XGB_Tuned_B_Gabungan.png
+    |   |   cv_A_Gabungan.csv
+    |   |   cv_A_Manual.csv
+    |   |   cv_B_Gabungan.csv
+    |   |   cv_results.csv
+    |   |   cv_results_E07.csv
+    |   |   cv_results_XGB_Tuned_A_Gabungan.csv
+    |   |   cv_XGB_v2_Tuned_Manual.csv
+    |   |   
+    |   \---confusion_matrix_v2
+    +---splits
+    |       A_gabungan_idb_test.csv
+    |       A_gabungan_idb_train.csv
+    |       A_gabungan_xgb_test.csv
+    |       A_gabungan_xgb_train.csv
+    |       A_manual_idb_test.csv
+    |       A_manual_idb_train.csv
+    |       A_manual_xgb_test.csv
+    |       A_manual_xgb_train.csv
+    |       B_gabungan_idb_test.csv
+    |       B_gabungan_idb_train.csv
+    |       B_gabungan_xgb_test.csv
+    |       B_gabungan_xgb_train.csv
+    |       
+    +---splits_v2
+    |       v2b_bgab_test.csv
+    |       v2b_bgab_train.csv
+    |       v2b_gabungan_test.csv
+    |       v2b_gabungan_train.csv
+    |       v2b_manual_test.csv
+    |       v2b_manual_train.csv
+    |       
+    +---splits_v2b
+    \---spot_check
